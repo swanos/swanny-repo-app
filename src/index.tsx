@@ -4,19 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-//const dataDummy = [
-//  {
-//    id: "1",
-//    name: "Bambang",
-//    email: "bambang@gmail.com"
-//  },
-//  {
-//    id: "2",
-//    name: "Budi",
-//    email: "budi@yahoo.co.id"
-//  },
-//]
-
 ReactDOM.render(
   <React.StrictMode>
     <App />

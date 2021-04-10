@@ -1,75 +1,92 @@
 import React, { useState, useRef } from 'react';
+import { Header, Icon, Container, Menu, Segment, Sidebar, Dropdown, DropdownMenu } from 'semantic-ui-react'
+import 'semantic-ui-css/semantic.min.css'
 import './App.css';
 
-const App = () => {
-  const [timer, setTimer] = useState(0);
-  const [isActive, setIsActive] = useState(false);
-  const increment: any = useRef(null);
+interface IAppState {
+  showSidebar : boolean;
+}
 
-  const handleStart = () => {
-    setIsActive(true)
-    increment.current = setInterval(() => {
-      setTimer((timer) => timer + 1)
-    }, 10)
-  }
-
-  const handlePause = () => {
-    setIsActive(false)
-    clearInterval(increment.current)
-  }
-
-  const handleResume = () => {
-    setIsActive(true);
-    increment.current = setInterval(() => {
-      setTimer((timer) => timer + 1)
-    }, 10)
-  }
-
-  const handleReset = () => {
-    clearInterval(increment.current);
-    setIsActive(false);
-    setTimer(0);
-  }
-
-  const formatTime = () => {
-    const centiSeconds = `0${(timer % 100)}`.slice(-2)
-    const seconds = `0${Math.floor(timer / 100) % 60}`.slice(-2)
-    const minutes = `0${Math.floor(timer / 6000) % 60}`.slice(-2)
-
-    return `${minutes} : ${seconds} : ${centiSeconds}`
-  }
-
-  const renderingBtn = () => {
-    if (!isActive && timer === 0) {
-      return (
-        <button onClick={handleStart}>Start</button>
-      )
-    } else if (!isActive && timer > 0) {
-      return (
-        <>
-          <button onClick={handleResume}>Resume</button>
-          <button onClick={handleReset}>Reset</button>
-        </>
-      )
+class App extends React.Component<{}, IAppState> {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showSidebar : false,
     }
+  }
+
+  public toggleSidebar = () => {
+    this.setState({showSidebar: !this.state.showSidebar});
+  }
+
+  public contentClick = () => {
+    if (this.state.showSidebar) {
+      this.setState({showSidebar: !this.state.showSidebar});
+    }
+  }
+
+  public render() {
+    const {showSidebar} = this.state;
     return (
-      <>
-        <button onClick={handlePause}>Pause</button>
-      </>
+      <Sidebar.Pushable as={Segment} className="app-wrapper">
+        <Sidebar
+          as={Menu}
+          animation="overlay"
+          icon="labeled"
+          inverted
+          vertical
+          visible={showSidebar}
+          width="thin"
+        >
+          <Menu.Item as='a'>
+            <Icon name="home" />
+            Home
+          </Menu.Item>
+          <Menu.Item as='a'>
+            <Icon name="gamepad" />
+            Games
+          </Menu.Item>
+          <Menu.Item as='a'>
+            <Icon name="camera" />
+            Channels
+          </Menu.Item>
+        </Sidebar>
+        <Sidebar.Pusher
+          dimmed={showSidebar}
+          onClick={this.contentClick}
+        >
+          <Menu className="navbar">
+            <Container className="navbar-top">
+              <Menu.Item onClick={this.toggleSidebar}>
+                <Icon name="bars" />
+              </Menu.Item>
+              <Dropdown
+                item
+                simple
+                text={"menu dropdown"}
+              >
+                <DropdownMenu>
+                  <Dropdown.Item
+                    icon="settings"
+                    text="settings"
+                  />
+                  <Dropdown.Item
+                    icon="sign out"
+                    text="sign out"
+                  />
+                </DropdownMenu>
+              </Dropdown>
+            </Container>
+          </Menu>
+          <Container>
+            <Segment>
+              <Header as="h3">Application Content</Header>
+            </Segment>
+          </Container>
+        </Sidebar.Pusher>
+      </Sidebar.Pushable>
     )
   }
-  
-  return (
-    <div className="App">
-      <div className="Stopwatch">
-        <div className="Stopwatch-header">Stopwatch</div>
-        <div className="Stopwatch-display">
-          {formatTime()}
-        </div> 
-        {renderingBtn()}
-      </div>
-    </div>
-  )
 }
 
 export default App;
