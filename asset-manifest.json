@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/swanny-repo-app/static/css/main.45554f4b.chunk.css",
-    "main.js": "/swanny-repo-app/static/js/main.4da97f8e.chunk.js",
-    "main.js.map": "/swanny-repo-app/static/js/main.4da97f8e.chunk.js.map",
-    "runtime-main.js": "/swanny-repo-app/static/js/runtime-main.db1d5e2e.js",
-    "runtime-main.js.map": "/swanny-repo-app/static/js/runtime-main.db1d5e2e.js.map",
+    "main.js": "/swanny-repo-app/static/js/main.548184b3.chunk.js",
+    "main.js.map": "/swanny-repo-app/static/js/main.548184b3.chunk.js.map",
+    "runtime-main.js": "/swanny-repo-app/static/js/runtime-main.9d789bf5.js",
+    "runtime-main.js.map": "/swanny-repo-app/static/js/runtime-main.9d789bf5.js.map",
     "static/css/2.50db6d36.chunk.css": "/swanny-repo-app/static/css/2.50db6d36.chunk.css",
-    "static/js/2.f21a4453.chunk.js": "/swanny-repo-app/static/js/2.f21a4453.chunk.js",
-    "static/js/2.f21a4453.chunk.js.map": "/swanny-repo-app/static/js/2.f21a4453.chunk.js.map",
-    "static/js/3.e0e7c93f.chunk.js": "/swanny-repo-app/static/js/3.e0e7c93f.chunk.js",
-    "static/js/3.e0e7c93f.chunk.js.map": "/swanny-repo-app/static/js/3.e0e7c93f.chunk.js.map",
+    "static/js/2.c63e70c4.chunk.js": "/swanny-repo-app/static/js/2.c63e70c4.chunk.js",
+    "static/js/2.c63e70c4.chunk.js.map": "/swanny-repo-app/static/js/2.c63e70c4.chunk.js.map",
+    "static/js/3.bdb8eac9.chunk.js": "/swanny-repo-app/static/js/3.bdb8eac9.chunk.js",
+    "static/js/3.bdb8eac9.chunk.js.map": "/swanny-repo-app/static/js/3.bdb8eac9.chunk.js.map",
     "index.html": "/swanny-repo-app/index.html",
     "static/css/2.50db6d36.chunk.css.map": "/swanny-repo-app/static/css/2.50db6d36.chunk.css.map",
     "static/css/main.45554f4b.chunk.css.map": "/swanny-repo-app/static/css/main.45554f4b.chunk.css.map",
-    "static/js/2.f21a4453.chunk.js.LICENSE.txt": "/swanny-repo-app/static/js/2.f21a4453.chunk.js.LICENSE.txt",
+    "static/js/2.c63e70c4.chunk.js.LICENSE.txt": "/swanny-repo-app/static/js/2.c63e70c4.chunk.js.LICENSE.txt",
     "static/media/semantic.min.css": "/swanny-repo-app/static/media/outline-icons.ddae9b1b.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.db1d5e2e.js",
+    "static/js/runtime-main.9d789bf5.js",
     "static/css/2.50db6d36.chunk.css",
-    "static/js/2.f21a4453.chunk.js",
+    "static/js/2.c63e70c4.chunk.js",
     "static/css/main.45554f4b.chunk.css",
-    "static/js/main.4da97f8e.chunk.js"
+    "static/js/main.548184b3.chunk.js"
   ]
 }
